@@ -1,0 +1,10 @@
+ipwhois==1.2.0
+pangea-sdk==4.2.0
+python_dateutil==2.9.0.post0
+pytz==2024.1
+scikit-learn==1.5.1
+shap==0.46.0
+matplotlib==3.9.2
+python-dotenv==1.0.1
+setuptools==70.0.0
+dnspython==2.0.0

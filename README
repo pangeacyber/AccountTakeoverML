@@ -1,0 +1,16 @@
+Enriching Authentication data for ML based suspicious login detection.
+
+This project used a Jupyter notebook to show how to perform Machine Learning based detection of suspicious logins. Authentication data is pulled from log data stored in Pangea Secure Audit. Authentication features like IP and email are enriched with Pangea IP Intel and Pangea User Breach Intel api based services.
+
+Once authentication data is enriched, the notebook shows how to extract features. A model is then trained on historical data using an Isolation Forest. Finally the model is used to test recent authentications.   
+
+To use this example, first setup Pangea User Intel, Ip Intel, Secure Audit, and Vault services. Additionally, to create sample data configure Secure Audit Log. See https://pangea.cloud/docs/
+
+Create tokens for each service and make sure to select "store token in vault". Additionally, create a vault token that we will use to retrieve the service tokens. To use AuthN data, the Audit token should be created after AuthN is configured and has "Activity Log" enabled in AuthN General Settings. To create the Secure Audit token within the Pangea Console open the Secure Audit Log configuration page, select "Service Activity", and create your vaulted token.  
+
+With these tokens configure a .env file in the root of the repo (see sample.env). The VAULT_TOKEN should be set to the vault token created. VAULT_AUDIT_ID, VAULT_IPINTEL_ID, and VAULT_USERINTEL_ID should be set to the ID of the vaulted secret.  
+
+The Jupyter notebook includes notes on the steps taken to perform the detection. 
+
+
+
